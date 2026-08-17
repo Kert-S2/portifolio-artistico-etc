@@ -17,27 +17,31 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    background-attachment: fixed;
 
     color: white;
     font-family: Arial, sans-serif;
-
-    /* Centraliza o container principal na tela */
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
-.inicio {
+/* Container que alinha tudo no centro da página */
+.container {
     width: 100%;
-    max-width: 600px;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 20px;
 
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+}
 
+/* Apresentação */
+.inicio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
-    padding: 20px;
+    margin-bottom: 50px;
 }
 
 .foto-perfil {
@@ -58,4 +62,56 @@ h1 {
     font-size: 18px;
     line-height: 1.6;
     margin: 0;
+}
+
+/* Seção da Galeria */
+.galeria-container {
+    width: 100%;
+    text-align: center;
+}
+
+.galeria-container h2 {
+    font-size: 28px;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Grid de Desenhos: 2 colunas lado a lado */
+.galeria-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.arte-item {
+    overflow: hidden;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background-color: rgba(0, 0, 0, 0.4);
+    
+    /* Força o quadro da imagem a ter proporção quadrada uniforme */
+    aspect-ratio: 1 / 1;
+}
+
+.arte-item img {
+    width: 100%;
+    height: 100%;
+    
+    /* Garante que a imagem preencha todo o quadro sem distorcer ou esticar */
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+/* Efeito ao passar o mouse por cima do desenho */
+.arte-item img:hover {
+    transform: scale(1.05);
+}
+
+/* Responsividade: no celular fica 1 coluna para não espremer */
+@media (max-width: 600px) {
+    .galeria-grid {
+        grid-template-columns: 1fr;
+    }
 }
