@@ -4,17 +4,129 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="stylesheet" href="style.css">
-
     <title>Kert | Portfólio</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            min-height: 100vh;
+        }
+
+        body {
+            background-image:
+                linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+                url("download.jpg");
+
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Container principal com rolagem contínua */
+        .container {
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 50px 20px;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Seção de Perfil (Topo) */
+        .inicio {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .foto-perfil {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            font-size: 48px;
+            margin: 0 0 10px;
+        }
+
+        .descricao {
+            max-width: 500px;
+            font-size: 18px;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* Seção da Galeria */
+        .galeria-container {
+            width: 100%;
+            text-align: center;
+        }
+
+        .galeria-container h2 {
+            font-size: 28px;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* Grid de Desenhos */
+        .galeria-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .arte-item {
+            overflow: hidden;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background-color: rgba(0, 0, 0, 0.4);
+            aspect-ratio: 1 / 1;
+        }
+
+        .arte-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .arte-item img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Responsividade para celular */
+        @media (max-width: 600px) {
+            .galeria-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
     <main class="container">
 
-        <!-- Seção Principal / Perfil -->
+        <!-- Apresentação -->
         <section class="inicio">
             <img src="image.webp" alt="Foto de perfil" class="foto-perfil">
 
